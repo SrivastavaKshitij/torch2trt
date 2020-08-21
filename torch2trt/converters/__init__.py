@@ -5,6 +5,7 @@ from .dummy_converters import *
 # supported converters will override dummy converters
 
 from .AdaptiveAvgPool2d import *
+from .arange import *
 from .BatchNorm1d import *
 from .BatchNorm2d import *
 from .Conv import *
