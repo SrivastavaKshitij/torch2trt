@@ -4,11 +4,11 @@ import math
 import tensorrt as trt 
 
 @tensorrt_converter('torch.arange')
-def convert_cat(ctx):
+def convert_arange(ctx):
     start = get_arg(ctx, 'start', pos=0, default=0)
-    end  = get_arg(ctx, 'end', pos=1)
+    end  = get_arg(ctx, 'end', pos=1,default=None)
     step  = get_arg(ctx, 'step', pos=2, default=1)
-    dtype  = get_arg(ctx, 'dtype',  pos=4)
+    dtype  = get_arg(ctx, 'dtype',  pos=4, default=None)
 
     output = ctx.method_return
     num_steps = math.floor((end - start) / step)
